@@ -16,7 +16,6 @@ public class Main {
 		System.out.println("3. Modificar.");
 		System.out.println("4. Borrar.");
 		System.out.println("5. Salir.");
-		System.out.println("Escriba la opción que desee realizar: ");
 
 	}
 
