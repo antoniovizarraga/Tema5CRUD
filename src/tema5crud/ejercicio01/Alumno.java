@@ -10,7 +10,7 @@ public class Alumno {
 	/**
 	 * Atributo que define la nota media del Alumno.
 	 */
-	public float notaMedia;
+	public double notaMedia;
 
 	/**
 	 * Función constructora sin parámetros.
@@ -25,7 +25,7 @@ public class Alumno {
 	 * @param nombre    El nombre del alumno.
 	 * @param notaMedia La nota media del alumno.
 	 */
-	public Alumno(String nombre, float notaMedia) {
+	public Alumno(String nombre, double notaMedia) {
 		if (nombre != null && !nombre.equals("")) {
 			this.nombre = nombre;
 		}
@@ -58,7 +58,7 @@ public class Alumno {
 	 * 
 	 * @return Devuelve el atributo notaMedia del alumno.
 	 */
-	public float getNotaMedia() {
+	public double getNotaMedia() {
 		return notaMedia;
 	}
 
@@ -67,17 +67,18 @@ public class Alumno {
 	 * 
 	 * @param notaMedia Atributo notaMedia pasado como parámetro.
 	 */
-	public void setNotaMedia(float notaMedia) {
+	public void setNotaMedia(double notaMedia) {
 		this.notaMedia = notaMedia;
 	}
 	
 	/**
 	 * Función que muestra la información del Alumno.
 	 */
+	@Override
 	public String toString() {
 		String cadena = "";
 		
-		cadena += "Nombre: " + nombre + " Nota: " + notaMedia;
+		cadena += "Nombre: " + this.nombre + " Nota: " + this.notaMedia;
 		
 		return cadena;
 	}
