@@ -127,11 +127,73 @@ public class Articulo {
 	}
 	
 	
+	/**
+	 * Constructor sin parámetros
+	 */
 	public Articulo() {
 		
 	}
 	
+	/**
+	 * Constructor con todos los atributos pasados como parámetro
+	 * @param codigo El código del Artículo.
+	 * @param descripcion La descripción del Artículo
+	 * @param precioCompra El precio de compra del artículo para la empresa
+	 * @param precioVenta El precio de venta del artículo por el que lo venderá
+	 * la empresa
+	 * @param stock Stock del artículo
+	 */
 	public Articulo(int codigo, String descripcion, float precioCompra, float precioVenta, int stock) {
-		if()
+		if(codigo>0) {
+			this.codigo = codigo;
+		}
+
+		if(descripcion != null && !descripcion.equals("")) {
+			this.descripcion = descripcion;
+		}
+
+		if(precioCompra>0) {
+			this.precioCompra = precioCompra;
+		}
+
+		if(precioVenta>0) {
+			this.precioVenta = precioVenta;
+		}
+
+		if(stock>=0){
+			this.stock = stock;
+		}
+
+
 	}
+	
+	@Override
+	public String toString() {
+		String cadena = "";
+
+		cadena += "Código: " + this.codigo + "\n";
+		cadena += "Descripción: " + this.descripcion + "\n";
+		cadena += "Precio compra: " + this.precioCompra + "\n";
+		cadena += "Precio venta: " + this.precioVenta + "\n";
+		cadena += "Stock: " + this.stock + "\n";
+
+		return cadena;
+	}
+
+
+
+	@Override
+	public boolean equals(Object obj) {
+		boolean transaccion = false;
+
+		Articulo artAux = (Articulo) obj;
+
+		if(this.codigo == artAux.codigo) {
+			transaccion = true;
+		}
+
+		return transaccion;
+	}
+
+
 }
